@@ -34,7 +34,7 @@ interface RequestOptions extends Omit<RequestInit, 'body'> {
   body?: unknown;
 }
 
-const API_PREFIX = '/api';
+const API_PREFIX = `${import.meta.env.VITE_API_BASE_URL || ''}/api`;
 const TOKEN_KEY = 'token';
 const REFRESH_TOKEN_KEY = 'refreshToken';
 
@@ -102,7 +102,6 @@ async function refreshAccessToken(): Promise<string | null> {
 
   refreshPromise = (async () => {
     try {
-      // TODO: depende de POST /api/auth/refresh no backend.
       const response = await fetch(`${API_PREFIX}/auth/refresh`, {
         method: 'POST',
         headers: {
