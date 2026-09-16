@@ -9,21 +9,21 @@ spring:
       hibernate:
         format_sql: true
     hibernate:
-      ddl-auto: validate # será sobrescrito em dev, mas mantemos como default seguro
+      ddl-auto: validate
   flyway:
-    enabled: false # em dev desabilitamos; em prod habilitamos via perfil
+    enabled: false
   jackson:
     default-property-inclusion: non_null
 
 server:
-  port: ${SERVER_PORT:8080}
+  port: ${PORT:8080}          # ← corrigido: Railway injeta PORT, não SERVER_PORT
   error:
     include-message: always
 
 jwt:
   secret: ${JWT_SECRET:}
   expiration: ${JWT_EXPIRATION:86400000}
-  refresh-expiration: ${JWT_REFRESH_EXPIRATION:2592000000}   # 30d
+  refresh-expiration: ${JWT_REFRESH_EXPIRATION:2592000000}
 
 springdoc:
   swagger-ui:
