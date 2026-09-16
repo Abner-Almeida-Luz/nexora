@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/diversao
+    driver-class-name: org.postgresql.Driver
+    username: diversao
+    password: diversao123
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: false # em dev o Hibernate cuida do schema (ddl-auto: update); Flyway fica desligado para não conflitar
+
+jwt:
+  # Segredo de desenvolvimento em Base64 válido (256 bits = 32 bytes)
+  secret: "c2VjdXJlLWRldi1zZWNyZXQta2V5LWZvci1kZXZlbG9wbWVudC1vbmx5LTIwMjQ="
+  expiration: 86400000
+  refresh-expiration: 2592000000
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
