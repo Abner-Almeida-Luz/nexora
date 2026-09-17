@@ -72,9 +72,9 @@ cd frontend && npm run build
 
 ### Incompleto
 
-- Painel ADMIN no frontend: apenas algumas telas (`AdminProducts`,
-  `AdminProductCreate`, `AdminProductEdit`, `AdminCategories`, `AdminOrders`)
-  estão presentes, mas o fluxo ainda precisa ser testado ponta a ponta
+- Painel ADMIN no frontend: **apenas `AdminProductCreate` existe**.
+  Faltam: `AdminProducts` (listagem), `AdminProductEdit`, `AdminCategories`,
+  `AdminOrders`, e a tela/fluxo de mudança de status de pedido.
 - Fluxo de review no frontend precisa ser testado contra produção
 
 ### Não iniciado
